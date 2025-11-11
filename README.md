@@ -10,3 +10,5 @@
   例：`feature/1`
 - main ブランチへの直接 push は禁止とする
 - PR 作成後は Slack にてレビュー依頼を行うこと
+- GUI（例：VSCodeのSource Control、GitHubのWebUI）は使用禁止。すべての操作は CLI（コマンドライン） で実施すること（ローカル操作を通じて、Gitの仕組みを理解する）
+
