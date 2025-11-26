@@ -8,8 +8,8 @@ folder_name = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 os.makedirs("./outputfile/{}".format(folder_name), exist_ok=True)
 
 # 入力excelファイルの読み込み
-input_path = "./inputfile/excel_sample.xlsx"
-df = pd.read_excel(input_path, engine="openpyxl")
+INPUT_PATH = "./inputfile/excel_sample.xlsx"
+df = pd.read_excel(INPUT_PATH, engine="openpyxl")
 
 # 1行ずつ処理
 for index, row in df.iterrows():
@@ -20,9 +20,5 @@ for index, row in df.iterrows():
     # 出力ファイルの作成
     file_name = "./outputfile/{}/{}.txt".format(folder_name, number)
     with open(file_name, mode="w", encoding="utf-8") as f:
-        f.write("#項番\n")
-        f.write("{}\n\n".format(number))
-        f.write("#質問\n")
-        f.write("{}\n\n".format(question))
-        f.write("#回答\n")
-        f.write("{}\n".format(answer))
+        text = "#項番\n{}\n\n#質問\n{}\n\n#回答\n{}\n".format(number, question, answer)
+        f.write(text)
