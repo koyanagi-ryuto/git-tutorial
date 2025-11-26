@@ -16,9 +16,18 @@ for index, row in df.iterrows():
     number = row["項番"]
     question = row["質問"]
     answer = row["回答"]
+    text = f"""\
+#項番
+{number}
+    
+#質問
+{question}
+    
+#回答
+{answer}
+"""
 
     # 出力ファイルの作成
     file_name = "./outputfile/{}/{}.txt".format(folder_name, number)
     with open(file_name, mode="w", encoding="utf-8") as f:
-        text = "#項番\n{}\n\n#質問\n{}\n\n#回答\n{}\n".format(number, question, answer)
         f.write(text)
